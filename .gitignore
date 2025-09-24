@@ -1,0 +1,17 @@
+# Ignorar dependencias de Composer
+/vendor/
+
+# Ignorar archivo de entorno sensible
+.env
+
+# Ignorar logs y uploads (contenido mutable)
+writable/logs/*
+writable/uploads/*
+
+# Ignorar caches o temporales
+*.log
+.DS_Store  # Para Mac
+Thumbs.db  # Para Windows
+
+# Ignorar XAMPP/HostGator specifics
+.htaccess.backup  # Backups automáticos

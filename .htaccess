@@ -1,0 +1,14 @@
+# Denegar acceso a todas las carpetas y archivos en la raiz, excepto public/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Denegar acceso a todas las carpetas y archivos fuera de public/
+    RewriteCond %{REQUEST_URI} !^/public/ [NC]
+    RewriteRule ^(.*)$ - [F,L]
+</IfModule>
+
+# Denegar acceso directo a archivos sensibles
+<FilesMatch "\.(env|log|cache)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
